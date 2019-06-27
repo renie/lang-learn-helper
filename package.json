@@ -1,0 +1,23 @@
+{
+  "name": "baseback",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "module": "main.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "npx mocha ./**/*.test.js  --require esm"
+  },
+  "author": "Renie Siqueira",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "esm": "^3.2.25",
+    "express": "^4.17.1",
+    "nedb": "^1.8.0",
+    "ramda": "^0.26.1"
+  },
+  "devDependencies": {
+    "mocha": "^6.1.4"
+  }
+}
