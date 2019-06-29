@@ -1,10 +1,12 @@
 import assert from 'assert'
+
 import { 
     hasValidExample,
     hasValidDescription,
     hasValidWordClass,
     isValidMeaning,
     areAllValidMeanings } from './meaning'
+
 
 describe('Meaning Model', () => {
 

@@ -2,17 +2,27 @@ import { getWordDatabase } from './model'
 import { areAllValidMeanings } from './meaning'
 import { isValidString } from '../utils/fn'
 
+import { promisify } from 'util'
+
+
 export const isValidName = (name, validateStringFn = isValidString) => 
     validateStringFn(name)
 
-export const isValidWord = (word, validateMeaningsFunction = areAllValidMeanings) => 
-    (isValidName(word.name) && validateMeaningsFunction(word.definition))
+export const isValidWord = (word, validateNameFn = isValidName, validateMeaningsFn = areAllValidMeanings) => 
+    (validateNameFn(word.name) && validateMeaningsFn(word.meanings))
 
-export const saveWord = (word, getWordDatabaseFn = getWordDatabase) => {
-    if (isValidWord(word))
-        return getWordDatabaseFn().insert(word)
-    throw Error('Invalid word object: ', word)
-}
+export const saveWord = (word, validateWordFn = isValidWord, getWordDatabaseFn = getWordDatabase) =>
+    new Promise((resolve, reject) => {
+        if (!validateWordFn(word))
+            reject('Invalid word object.')
+
+        getWordDatabaseFn().insert(word, (err, doc) => {
+            if (err)
+                reject(err)
+            resolve(doc)
+        })
+    })
 
 
-export const getWords = (afterFindingFn, getWordDatabaseFn = getWordDatabase) => getWordDatabaseFn().find({}, afterFindingFn)
+export const getWords = (afterFindingFn = () => {}, getWordDatabaseFn = getWordDatabase) => 
+    getWordDatabaseFn().find({}, afterFindingFn)

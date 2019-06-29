@@ -6,15 +6,19 @@
   "module": "main.js",
   "scripts": {
     "start": "node index.js",
-    "test": "npx mocha ./**/*.test.js  --require esm"
+    "test": "mocha ./**/*.test.js  --require esm",
+    "coverage": "nyc --reporter=html npm test"
   },
   "author": "Renie Siqueira",
   "license": "MIT",
   "dependencies": {
     "body-parser": "^1.19.0",
+    "chai": "^4.2.0",
+    "chai-as-promised": "^7.1.1",
     "esm": "^3.2.25",
     "express": "^4.17.1",
     "nedb": "^1.8.0",
+    "nyc": "^14.1.1",
     "ramda": "^0.26.1"
   },
   "devDependencies": {
