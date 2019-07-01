@@ -7,7 +7,8 @@
   "scripts": {
     "start": "node index.js",
     "test": "mocha ./**/*.test.js  --require esm",
-    "coverage": "nyc --reporter=html npm test"
+    "coverage": "nyc --reporter=html npm test",
+    "seed": "node -r esm ./seed.js"
   },
   "author": "Renie Siqueira",
   "license": "MIT",
