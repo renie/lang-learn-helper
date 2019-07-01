@@ -1,10 +1,11 @@
 import express from 'express'
+import cors from 'cors'
 import bodyParser from 'body-parser'
 
 import { setAllRoutes } from './routes/mainRouter'
 
 
-const defaultPort = 3000
+const defaultPort = 3030
 
 const logURLMappings = (expressInstance, logFn) => {
     expressInstance._router.stack
@@ -17,6 +18,7 @@ const logURLMappings = (expressInstance, logFn) => {
 const getExpressInstance = (expressLib) => {
     const instance = expressLib()
     instance.use(bodyParser.json())
+    instance.use(cors())
     return instance
 }
 
