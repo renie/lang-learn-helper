@@ -1,4 +1,4 @@
-import { saveNewWord, listAll } from '../controllers/word'
+import { saveNewWord, listAll, listAllAvailableClasses } from '../controllers/word'
 
 export const wordRoutes = [{
         method: 'post',
@@ -9,4 +9,9 @@ export const wordRoutes = [{
         method: 'get',
         url: '/word',
         fn: listAll
+    },
+    {
+        method: 'get',
+        url: '/available-word-classes',
+        fn: listAllAvailableClasses
     }]

@@ -1,4 +1,5 @@
 import { saveWord, getWords } from '../models/word'
+import { wordClasses } from '../models/wordClasses'
 
 export const saveNewWord = (req, res) => {
     try{
@@ -14,3 +15,5 @@ export const saveNewWord = (req, res) => {
 export const listAll = (_, res) => {
     getWords((_, words) => res.status(200).send(words))
 }
+
+export const listAllAvailableClasses = (_, res) => res.status(200).send(wordClasses)

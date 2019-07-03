@@ -1,5 +1,5 @@
 export const wordClasses = [ 
-    'not set',
+    'not_set',
     'noun', 
     'verb', 
     'adjective', 
