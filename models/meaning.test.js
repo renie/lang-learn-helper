@@ -45,7 +45,7 @@ describe('Meaning Model', () => {
     describe('hasValidWordClass', () => {
 
         it('should return valid word class for every class', () => {
-            assert.ok(hasValidWordClass('not set'))
+            assert.ok(hasValidWordClass('not_set'))
             assert.ok(hasValidWordClass('noun'))
             assert.ok(hasValidWordClass('verb'))
             assert.ok(hasValidWordClass('adjective'))

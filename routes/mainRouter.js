@@ -5,6 +5,7 @@ import {
 } from './generalRoutes'
 
 import { wordRoutes } from './wordRoutes'
+import { essayRoutes } from './essayRoutes'
 
 export const setRoute = (route, expressInstance, genericErrorFn = genericErrorFunction) => {
     expressInstance[route.method](route.url, route.fn, route.errorFn || genericErrorFn)
@@ -16,6 +17,7 @@ export const setAllRoutes = (
     routes = [
         ...rootRoutes,
         ...wordRoutes,
+        ...essayRoutes,
         ...notFoundRoutes
     ]
 ) => {
