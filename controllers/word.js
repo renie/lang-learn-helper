@@ -6,7 +6,7 @@ export const saveNewWord = (req, res) => {
         saveWord(req.body)
             .then(newWord => res.status(201).send(newWord))
             .catch(e => res.status(500).send(e.message))
-        
+
     } catch(e) {
         res.status(500).send(e.message)
     }

@@ -8,7 +8,8 @@
     "start": "node index.js",
     "test": "mocha ./**/*.test.js  --require esm",
     "coverage": "nyc --reporter=html npm test",
-    "seed": "node -r esm ./seed.js"
+    "seed": "node -r esm ./seed.js",
+    "lint": "npx eslint controllers models routes utils seed.js server.js"
   },
   "author": "Renie Siqueira",
   "license": "MIT",
@@ -25,6 +26,7 @@
     "ramda": "^0.26.1"
   },
   "devDependencies": {
+    "eslint": "^6.0.1",
     "mocha": "^6.1.4"
   }
 }

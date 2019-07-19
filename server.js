@@ -9,10 +9,10 @@ const defaultPort = 3030
 
 const logURLMappings = (expressInstance, logFn) => {
     expressInstance._router.stack
-      .filter(r => r.route)
-      .map(r => r.route)
-      .map(r => `${r.path} - ${r.stack[0].method} - ${r.stack[0].name}`)
-      .forEach(r => logFn(r))
+        .filter(r => r.route)
+        .map(r => r.route)
+        .map(r => `${r.path} - ${r.stack[0].method} - ${r.stack[0].name}`)
+        .forEach(r => logFn(r))
 }
 
 const getExpressInstance = (expressLib) => {

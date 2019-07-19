@@ -7,76 +7,76 @@ if (!fs.existsSync(dir))
 
 
 const words = [{
-    "name": "cross",
-    "meanings": [{
-        "id": 1,
-        "wordClass": "noun",
-        "example": "The constellation Southern Cross",
-        "description": "a mark, object, or figure formed by two short intersecting lines or pieces (+ or ×)"
-        },
-        {
-            "id": 2,
-            "wordClass": "verb",
-            "example": "The two lines cross at 90°",
-            "description": "Pass in an opposite or different direction"
-        },
-        {
-            "id": 3,
-            "wordClass": "adjective",
-            "example": "He seemed to be very cross about something",
-            "description": "Annoyed"
-        }]
+    'name': 'cross',
+    'meanings': [{
+        'id': 1,
+        'wordClass': 'noun',
+        'example': 'The constellation Southern Cross',
+        'description': 'a mark, object, or figure formed by two short intersecting lines or pieces (+ or ×)'
     },
-
     {
-    "name": "egg",
-    "meanings": [{
-            "id": 1,
-            "wordClass": "verb",
-            "example": "Encourage someone to do something.",
-            "description": "His brother egg him."
-        },
-        {
-            "id": 2,
-            "wordClass": "noun",
-            "example": "The fish is lay eggs on the lake",
-            "description": "an oval or round object laid by some female animals."
-        }] 
+        'id': 2,
+        'wordClass': 'verb',
+        'example': 'The two lines cross at 90°',
+        'description': 'Pass in an opposite or different direction'
     },
-
     {
-    "name": "classified",
-    "meanings": [{
-            "id": 1,
-            "wordClass": "adjective",
-            "example": "This pen is classified among blue ones.",
-            "description": "Verb classify in past tense."
-        },
-        {
-            "id": 2,
-            "wordClass": "noun",
-            "example": "He is reading the classified.",
-            "description": "Small advertisements placed in a newspaper and organized in categories.."
-        }] 
+        'id': 3,
+        'wordClass': 'adjective',
+        'example': 'He seemed to be very cross about something',
+        'description': 'Annoyed'
+    }]
+},
+
+{
+    'name': 'egg',
+    'meanings': [{
+        'id': 1,
+        'wordClass': 'verb',
+        'example': 'Encourage someone to do something.',
+        'description': 'His brother egg him.'
     },
-
     {
-    "name": "used",
-    "meanings": [{
-            "id": 1,
-            "wordClass": "verb",
-            "example": "He used my pen.",
-            "description": "Verb use in past tense."
-        },
-        {
-            "id": 2,
-            "wordClass": "adjective",
-            "example": "My pen is used.",
-            "description": "Means the object is not new anymore."
-        }] 
-    }
+        'id': 2,
+        'wordClass': 'noun',
+        'example': 'The fish is lay eggs on the lake',
+        'description': 'an oval or round object laid by some female animals.'
+    }] 
+},
 
-];
+{
+    'name': 'classified',
+    'meanings': [{
+        'id': 1,
+        'wordClass': 'adjective',
+        'example': 'This pen is classified among blue ones.',
+        'description': 'Verb classify in past tense.'
+    },
+    {
+        'id': 2,
+        'wordClass': 'noun',
+        'example': 'He is reading the classified.',
+        'description': 'Small advertisements placed in a newspaper and organized in categories..'
+    }] 
+},
+
+{
+    'name': 'used',
+    'meanings': [{
+        'id': 1,
+        'wordClass': 'verb',
+        'example': 'He used my pen.',
+        'description': 'Verb use in past tense.'
+    },
+    {
+        'id': 2,
+        'wordClass': 'adjective',
+        'example': 'My pen is used.',
+        'description': 'Means the object is not new anymore.'
+    }] 
+}
+
+]
 
 const db = getWordDatabase()
 

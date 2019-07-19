@@ -7,8 +7,8 @@ describe('General Routes', () => {
     describe('genericErrorFunction', () => {
 
         const shouldReturn = {
-            msg: "Error: Last error layer. Cause: Pfffff, I dunno. Ask your programmer.",
-            code: "500"
+            msg: 'Error: Last error layer. Cause: Pfffff, I dunno. Ask your programmer.',
+            code: '500'
         }
 
         let returnTest = {

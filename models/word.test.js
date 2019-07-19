@@ -15,19 +15,19 @@ import {
 
 describe('Word Model', () => {
     const testWord = {
-        "name": "used",
-        "meanings": [{
-            "id": 1,
-            "wordClass": "verb",
-            "example": "He used my pen.",
-            "description": "Verb use in past tense."
+        'name': 'used',
+        'meanings': [{
+            'id': 1,
+            'wordClass': 'verb',
+            'example': 'He used my pen.',
+            'description': 'Verb use in past tense.'
         },
         {
-            "id": 2,
-            "wordClass": "adjective",
-            "example": "My pen is used.",
-            "description": "Means the object is not new anymore."
-        }] 
+            'id': 2,
+            'wordClass': 'adjective',
+            'example': 'My pen is used.',
+            'description': 'Means the object is not new anymore.'
+        }]
     }
 
     describe('isValidName', () => {
@@ -54,7 +54,7 @@ describe('Word Model', () => {
             let returnTest2 = ''
             returnTest1 = ''
             const fnTest2 = meanings => { returnTest2 = meanings; return true }
-            
+
             isValidWord(testWord, fnTest1, fnTest2)
             assert.equal(testWord.name, returnTest1)
             assert.deepStrictEqual(testWord.meanings, returnTest2)
@@ -72,24 +72,22 @@ describe('Word Model', () => {
         const fnTest1 = word => { returnTest1 = word.name; return true }
 
         it('should call validation functions', async () => {
-            let returnTest2 = ''
             returnTest1 = ''
             const fnTest2 = () => ({
-                insert: (word, callback) => { returnTest2 = word; callback() }
+                insert: (word, callback) => { callback() }
             })
-            
+
             await saveWord(testWord, fnTest1, fnTest2)
-            
+
             assert.equal(returnTest1, testWord.name)
         })
 
         it('should call validation functions - with error', async () => {
-            let returnTest2 = ''
             returnTest1 = ''
             const fnTest2 = () => ({
-                insert: (word, callback) => { returnTest2 = word; callback(new Error('test error')) }
+                insert: (word, callback) => { callback(new Error('test error')) }
             })
-            
+
             return expect(saveWord(testWord, fnTest1, fnTest2)).to.be.rejectedWith(Error, 'test error')
         })
 

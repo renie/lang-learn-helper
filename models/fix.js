@@ -9,4 +9,4 @@ export const isValidFix = fix => (
     isValidDate(fix.lastUpdate) &&
     isValidFrom(fix.from) &&
     isValidTo(fix.to)
-    )
+)

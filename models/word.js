@@ -2,13 +2,10 @@ import { getWordDatabase } from './model'
 import { areAllValidMeanings } from './meaning'
 import { isValidString } from '../utils/fn'
 
-import { promisify } from 'util'
-
-
-export const isValidName = (name, validateStringFn = isValidString) => 
+export const isValidName = (name, validateStringFn = isValidString) =>
     validateStringFn(name)
 
-export const isValidWord = (word, validateNameFn = isValidName, validateMeaningsFn = areAllValidMeanings) => 
+export const isValidWord = (word, validateNameFn = isValidName, validateMeaningsFn = areAllValidMeanings) =>
     (validateNameFn(word.name) && validateMeaningsFn(word.meanings))
 
 export const saveWord = (word, validateWordFn = isValidWord, getWordDatabaseFn = getWordDatabase) =>
@@ -24,5 +21,5 @@ export const saveWord = (word, validateWordFn = isValidWord, getWordDatabaseFn =
     })
 
 
-export const getWords = (afterFindingFn = () => {}, getWordDatabaseFn = getWordDatabase) => 
+export const getWords = (afterFindingFn = () => {}, getWordDatabaseFn = getWordDatabase) =>
     getWordDatabaseFn().find({}, afterFindingFn)
